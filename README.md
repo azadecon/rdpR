@@ -5,4 +5,5 @@ This package is currently in beta. Suggestions are welcome. Please make an issue
 
 # How to install
 `library(devtools)`
+
 `devtools::install("azadecon/rdpR")`
