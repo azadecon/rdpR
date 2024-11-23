@@ -9,5 +9,5 @@ library(devtools)
 ```
 
 ```{R}
-devtools::install("azadecon/rdpR")
+devtools::install_github("azadecon/rdpR")
 ```
