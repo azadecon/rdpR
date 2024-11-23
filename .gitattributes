@@ -1,0 +1,16 @@
+# Handle line endings automatically
+* text=auto
+
+# Specify that R scripts should use LF line endings
+*.R text eol=lf
+
+# Handle RMarkdown files with LF line endings
+*.Rmd text eol=lf
+
+# Ensure DESCRIPTION and NAMESPACE files use LF
+DESCRIPTION text eol=lf
+NAMESPACE text eol=lf
+
+# Force CRLF on Windows for certain files (e.g., Rproj)
+*.Rproj text eol=crlf
+
