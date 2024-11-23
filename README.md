@@ -20,6 +20,10 @@ For now you can supply a `property_ID` and get the history of all the payments m
 ```{R}
 library(rdpr)
 rdpr::get_property_tax_history("property_ID")
+
+## example
+## property_ID <- 150300700700400133
+## property_ID <- 150300700700400095
 ```
 This returns a dataframe containing the history of `n` payments in 5 columns and `n` rows. The columns are `receipt_number`, `payment_type`, `payment_amount`, `unique_id`, and `payment_date`.
 
