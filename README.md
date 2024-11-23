@@ -11,3 +11,6 @@ library(devtools)
 ```{R}
 devtools::install_github("azadecon/rdpR")
 ```
+# How to use this package?
+
+Well, currently this is just a wrapper to get data from Bapuji Sewa Kendra (BSK) (https://bsk.karnataka.gov.in/BSK/cs/loadDownlodeReceipt)
