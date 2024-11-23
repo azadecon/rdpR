@@ -4,6 +4,10 @@ a package to programmatically get a variety of data from Rural Development and P
 This package is currently in beta. Suggestions are welcome. Please make an issue and/or make a pull request.
 
 # How to install
-```library(devtools)```
+```{R}
+library(devtools)
+```
 
-```devtools::install("azadecon/rdpR")```
+```{R}
+devtools::install("azadecon/rdpR")
+```
