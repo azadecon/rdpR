@@ -37,3 +37,8 @@ You can supply a `property_ID` and get the `total collection`, `total demand`, a
 
 ## get the details of the respective panchayat for a `gp_ID`
 But if you know the  `gp_ID` (gram panchayat ID), this function gets the `total collection`, `total demand`, and `total balance`.
+
+
+# to be added
+1. `get_panchayat_properties()`: this retrieves all the properties in a given panchayat `gp_ID` and their variables such as `total_demand`, `total_collection`, `arrears` and so on. Additionally, `year` option can be changed to retrieve it for different years.
+2. `get_panchayat_property_tax_history`: this gets the history of tax payment for all the properties in a panchayat. That is a property can have multiple payment in a given year which is not captured in `get_panchayat_properties()`.
