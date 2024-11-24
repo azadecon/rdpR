@@ -90,12 +90,7 @@ get_property_panchayat_details <- function(property_ID){
     'sec-ch-ua-platform' = '"Windows"'
   )
 
-  bodz <- sprintf("{\"unique_id\":\"%s\",\"rec_type\":\"27\"}", property_ID)
-
-  res <- VERB("POST", url = "https://bsk.karnataka.gov.in/BSK/ajax/getRDAPRWebService?serviceName=getReceiptsDetails&serviceType=MASTER", body = bodz, add_headers(headers))
-
-  json_content <- content(res, "text", encoding = "UTF-8")
-  dataf <- jsonlite::fromJSON(json_content) %>% as.data.frame() %>% clean_names()
+  dataf <- get_property_tax_history(property_ID)
 
   if (nrow(dataf) > 0) {
     # The dataframe has at least one row
