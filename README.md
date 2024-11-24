@@ -13,7 +13,7 @@ devtools::install_github("azadecon/rdpR")
 ```
 # How to use this package?
 
-Well, currently this is just a wrapper to get data from [Bapuji Sewa Kendra (BSK)](https://bsk.karnataka.gov.in/BSK/cs/loadDownlodeReceipt)) and [Panchatantra](https://panchatantra.karnataka.gov.in/USER_MODULE/userLogin/loadHomePage). Several things are planned.
+Well, currently this is just a wrapper to get data from [Bapuji Sewa Kendra (BSK)](https://bsk.karnataka.gov.in/BSK/cs/loadDownlodeReceipt) and [Panchatantra](https://panchatantra.karnataka.gov.in/USER_MODULE/userLogin/loadHomePage). Several things are planned.
 
 ## get all the payment history for a `property_ID`
 You can supply a `property_ID` and get the history of all the payments made, right in `R`.
