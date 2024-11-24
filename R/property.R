@@ -1,23 +1,28 @@
 #' @export
 get_property_tax_history <- function(property_ID){
-  headers = c(
-    'Accept' = '*/*',
-    'Accept-Language' = 'en-US,en;q=0.6',
-    'Connection' = 'keep-alive',
-    'Content-Type' = 'application/json; charset=UTF-8',
-    'Cookie' = 'JSESSIONID=BDAE6A54BD248CD2793D78BC3E695CB0.server1',
-    'Origin' = 'https://bsk.karnataka.gov.in',
-    'Referer' = 'https://bsk.karnataka.gov.in/BSK/cs/loadDownlodeReceipt',
-    'Sec-Fetch-Dest' = 'empty',
-    'Sec-Fetch-Mode' = 'cors',
-    'Sec-Fetch-Site' = 'same-origin',
-    'Sec-GPC' = '1',
-    'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
-    'X-Requested-With' = 'XMLHttpRequest',
-    'sec-ch-ua' = '"Brave";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
-    'sec-ch-ua-mobile' = '?0',
-    'sec-ch-ua-platform' = '"Windows"'
-  )
+
+  if (exists("jessionID") && nchar(jessionID) > 0) {
+    headers <- c(
+      'Accept' = '*/*',
+      'Accept-Language' = 'en-US,en;q=0.7',
+      'Connection' = 'keep-alive',
+      'Content-Type' = 'application/json; charset=UTF-8',
+      'Cookie' = paste0('JSESSIONID=', jessionID, '.server1'),
+      'Origin' = 'https://panchatantra.karnataka.gov.in',
+      'Referer' = 'https://panchatantra.karnataka.gov.in/USER_MODULE/userLogin/loadPanchamitra',
+      'Sec-Fetch-Dest' = 'empty',
+      'Sec-Fetch-Mode' = 'cors',
+      'Sec-Fetch-Site' = 'same-origin',
+      'Sec-GPC' = '1',
+      'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+      'X-Requested-With' = 'XMLHttpRequest',
+      'sec-ch-ua' = '"Brave";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+      'sec-ch-ua-mobile' = '?0',
+      'sec-ch-ua-platform' = '"Windows"'
+    )
+  } else {
+    print("Please provide a valid jessionID!")
+  }
 
   bodz <- sprintf("{\"unique_id\":\"%s\",\"rec_type\":\"27\"}", property_ID)
 
@@ -35,24 +40,31 @@ get_property_tax_history <- function(property_ID){
 #' @export
 get_panchayat_details <- function(gp_ID){
 
-  headers = c(
-    'Accept' = '*/*',
-    'Accept-Language' = 'en-US,en;q=0.7',
-    'Connection' = 'keep-alive',
-    'Content-Type' = 'application/json; charset=UTF-8',
-    'Cookie' = 'JSESSIONID=2702A6A11696375BDF62A96778BEA166',
-    'Origin' = 'https://panchatantra.karnataka.gov.in',
-    'Referer' = 'https://panchatantra.karnataka.gov.in/USER_MODULE/userLogin/loadPanchamitra',
-    'Sec-Fetch-Dest' = 'empty',
-    'Sec-Fetch-Mode' = 'cors',
-    'Sec-Fetch-Site' = 'same-origin',
-    'Sec-GPC' = '1',
-    'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-    'X-Requested-With' = 'XMLHttpRequest',
-    'sec-ch-ua' = '"Brave";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
-    'sec-ch-ua-mobile' = '?0',
-    'sec-ch-ua-platform' = '"Windows"'
-  )
+  if (exists("jessionID") && nchar(jessionID) > 0) {
+    headers <- c(
+      'Accept' = '*/*',
+      'Accept-Language' = 'en-US,en;q=0.7',
+      'Connection' = 'keep-alive',
+      'Content-Type' = 'application/json; charset=UTF-8',
+      'Cookie' = paste0('JSESSIONID=', jessionID),
+      'Origin' = 'https://panchatantra.karnataka.gov.in',
+      'Referer' = 'https://panchatantra.karnataka.gov.in/USER_MODULE/userLogin/loadPanchamitra',
+      'Sec-Fetch-Dest' = 'empty',
+      'Sec-Fetch-Mode' = 'cors',
+      'Sec-Fetch-Site' = 'same-origin',
+      'Sec-GPC' = '1',
+      'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+      'X-Requested-With' = 'XMLHttpRequest',
+      'sec-ch-ua' = '"Brave";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+      'sec-ch-ua-mobile' = '?0',
+      'sec-ch-ua-platform' = '"Windows"'
+    )
+  } else {
+    print("Please provide a valid jessionID!")
+  }
+
+
+
 
   bodzz = sprintf("{\"query_id\":\"20\",\"post_city\":\"%s\",\"access_level\":\"4\",\"language\":\"en\"}", gp_ID)
 
@@ -71,24 +83,29 @@ get_panchayat_details <- function(gp_ID){
 
 #' @export
 get_property_panchayat_details <- function(property_ID){
-  headers = c(
-    'Accept' = '*/*',
-    'Accept-Language' = 'en-US,en;q=0.6',
-    'Connection' = 'keep-alive',
-    'Content-Type' = 'application/json; charset=UTF-8',
-    'Cookie' = 'JSESSIONID=BDAE6A54BD248CD2793D78BC3E695CB0.server1',
-    'Origin' = 'https://bsk.karnataka.gov.in',
-    'Referer' = 'https://bsk.karnataka.gov.in/BSK/cs/loadDownlodeReceipt',
-    'Sec-Fetch-Dest' = 'empty',
-    'Sec-Fetch-Mode' = 'cors',
-    'Sec-Fetch-Site' = 'same-origin',
-    'Sec-GPC' = '1',
-    'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
-    'X-Requested-With' = 'XMLHttpRequest',
-    'sec-ch-ua' = '"Brave";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
-    'sec-ch-ua-mobile' = '?0',
-    'sec-ch-ua-platform' = '"Windows"'
-  )
+
+  if (exists("jessionID") && nchar(jessionID) > 0) {
+    headers <- c(
+      'Accept' = '*/*',
+      'Accept-Language' = 'en-US,en;q=0.7',
+      'Connection' = 'keep-alive',
+      'Content-Type' = 'application/json; charset=UTF-8',
+      'Cookie' = paste0('JSESSIONID=', jessionID, '.server1'),
+      'Origin' = 'https://panchatantra.karnataka.gov.in',
+      'Referer' = 'https://panchatantra.karnataka.gov.in/USER_MODULE/userLogin/loadPanchamitra',
+      'Sec-Fetch-Dest' = 'empty',
+      'Sec-Fetch-Mode' = 'cors',
+      'Sec-Fetch-Site' = 'same-origin',
+      'Sec-GPC' = '1',
+      'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+      'X-Requested-With' = 'XMLHttpRequest',
+      'sec-ch-ua' = '"Brave";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+      'sec-ch-ua-mobile' = '?0',
+      'sec-ch-ua-platform' = '"Windows"'
+    )
+  } else {
+    print("Please provide a valid jessionID!")
+  }
 
   dataf <- get_property_tax_history(property_ID)
 
@@ -114,3 +131,4 @@ get_property_panchayat_details <- function(property_ID){
 
 
 }
+
