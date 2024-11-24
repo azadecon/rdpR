@@ -4,6 +4,7 @@ a package to programmatically get a variety of data from Rural Development and P
 This package is currently in beta. Feedback, suggestions, and contributions are welcome-- feel free to open an issue or submit a pull request.
 
 # How to install
+## Install the package
 ```{R}
 library(devtools)
 ```
@@ -11,6 +12,22 @@ library(devtools)
 ```{R}
 devtools::install_github("azadecon/rdpR")
 ```
+## Get the `jessionID`
+A small piece of information is exchanged between your broweser (broadly the computer) and the website so that they can remember that it is `you` who wants to connect. For this `jessionID`, a cookie is required.
+
+### How to get the `jessionID`?
+1. Go to the [Panchatantra](https://panchatantra.karnataka.gov.in/USER_MODULE/userLogin/loadHomePage) website.
+2. Press `ctrl + shift + I` or go to the `Developer tools` in your browser.
+3. Press `ctrl + R` or reload the page.
+4. Go to the `Network` tab. It is between `Elements` and `Console` tab.
+5. Now click on `Fetch XHR`. A small panel will open.
+6. Click on any of the entry in the list. It might start with `getPanchatantraMaster...`.
+7. You will see tabs such as `Headers`, `Payload`, ...
+8. Access `Cookies` via `more tab` (the `>>` sign).
+9. Copy the 32-character long string under the `value` tab.
+10. Create an object `jessionID` with this value in your R code.
+
+
 # How to use this package?
 
 Well, currently this is just a wrapper to get data from [Bapuji Sewa Kendra (BSK)](https://bsk.karnataka.gov.in/BSK/cs/loadDownlodeReceipt) and [Panchatantra](https://panchatantra.karnataka.gov.in/USER_MODULE/userLogin/loadHomePage). Several things are planned.
@@ -21,6 +38,8 @@ You can supply a `property_ID` and get the history of all the payments made, rig
 ```{R}
 library(rdpr)
 rdpr::get_property_tax_history("property_ID")
+
+jessionID <- `a_32_character_long_string`
 
 ## example
 ## property_ID <- 150300700700400133
