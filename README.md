@@ -51,7 +51,7 @@ This returns a dataframe containing the history of `n` payments in 5 columns and
 
 
 ## get the details of the respective panchayat for a `property_ID`
-You can supply a `property_ID` and get the `total collection`, `total demand`, and `total balance`.
+You can supply a `property_ID` and get the `total collection`, `total demand`, and `total balance` for the panchayat this property belongs to.
 
 
 ## get the details of the respective panchayat for a `gp_ID`
