@@ -23,7 +23,7 @@ get_property_tax_history <- function(property_ID){
 
   res <- VERB("POST", url = "https://bsk.karnataka.gov.in/BSK/ajax/getRDAPRWebService?serviceName=getReceiptsDetails&serviceType=MASTER", body = bodz, add_headers(headers))
 
-  json_content <- content(res, "text")
+  json_content <- content(res, "text", encoding = "UTF-8")
   dataf <- jsonlite::fromJSON(json_content) %>% as.data.frame() %>% clean_names()
 
   return(dataf)
