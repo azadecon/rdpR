@@ -36,4 +36,4 @@ You can supply a `property_ID` and get the `total collection`, `total demand`, a
 
 
 ## get the details of the respective panchayat for a `gp_ID`
-But if you know the  `gp_ID` (gram panchayat ID) and get the `total collection`, `total demand`, and `total balance`.
+But if you know the  `gp_ID` (gram panchayat ID), this function gets the `total collection`, `total demand`, and `total balance`.
