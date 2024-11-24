@@ -13,7 +13,7 @@ library(devtools)
 devtools::install_github("azadecon/rdpR")
 ```
 ## Get the `jessionID`
-A small piece of information is exchanged between your broweser (broadly the computer) and the website so that they can remember that it is `you` who wants to connect. For this `jessionID`, a cookie is required.
+A small piece of information is exchanged between your browser (broadly the computer) and the website so that they can remember that it is `you` who wants to connect. For this `jessionID`, a cookie is required.
 
 ### How to get the `jessionID`?
 1. Go to the [Panchatantra](https://panchatantra.karnataka.gov.in/USER_MODULE/userLogin/loadHomePage) website.
